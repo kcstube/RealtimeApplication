@@ -8,14 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    @ObservedObject var state: ContentState
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Text("\(state.slider)").font(.largeTitle)
+            Spacer().frame(height: 24)
+            Button(state.isConnected ? "接続解除" : "接続") {
+                state.didTapButton()
+            }
+            Spacer().frame(height: 32)
+            Slider(value: $state.slider)
+        }
+        .padding()
+        .onReceive(state.$slider.debounce(for: 3, scheduler: DispatchQueue.main)) { _ in
+            state.sendValue()
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(state: ContentState(socket: socketManager.defaultSocket))
     }
 }
