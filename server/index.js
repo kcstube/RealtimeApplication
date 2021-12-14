@@ -18,7 +18,7 @@ io.on('connection', (socket) => {
     socket.on("slider", (value) => {
         sliderValue = value;
         console.log(value);
-        socket.broadcast.emit("slider", [value]);
+        socket.broadcast.emit("slider", value);
     })
 })
 
