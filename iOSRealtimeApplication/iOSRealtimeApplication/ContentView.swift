@@ -19,12 +19,18 @@ struct ContentView: View {
                 state.didTapButton()
             }
             Spacer().frame(height: 32)
-            Slider(value: $state.slider)
+            Slider(
+                value: Binding(
+                    get: {
+                        state.slider
+                    },
+                    set: { value in
+                        state.send(value: value)
+                    }
+                )
+            )
         }
         .padding()
-        .onReceive(state.$slider.debounce(for: 3, scheduler: DispatchQueue.main)) { _ in
-            state.sendValue()
-        }
     }
 }
 
