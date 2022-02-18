@@ -18,10 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$RootStateTearOff {
   const _$RootStateTearOff();
 
-  _RootState call({String displayName = ""}) {
-    return _RootState(
-      displayName: displayName,
-    );
+  _RootState call() {
+    return _RootState();
   }
 }
 
@@ -29,19 +27,12 @@ class _$RootStateTearOff {
 const $RootState = _$RootStateTearOff();
 
 /// @nodoc
-mixin _$RootState {
-  String get displayName => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $RootStateCopyWith<RootState> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+mixin _$RootState {}
 
 /// @nodoc
 abstract class $RootStateCopyWith<$Res> {
   factory $RootStateCopyWith(RootState value, $Res Function(RootState) then) =
       _$RootStateCopyWithImpl<$Res>;
-  $Res call({String displayName});
 }
 
 /// @nodoc
@@ -51,27 +42,13 @@ class _$RootStateCopyWithImpl<$Res> implements $RootStateCopyWith<$Res> {
   final RootState _value;
   // ignore: unused_field
   final $Res Function(RootState) _then;
-
-  @override
-  $Res call({
-    Object? displayName = freezed,
-  }) {
-    return _then(_value.copyWith(
-      displayName: displayName == freezed
-          ? _value.displayName
-          : displayName // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
-abstract class _$RootStateCopyWith<$Res> implements $RootStateCopyWith<$Res> {
+abstract class _$RootStateCopyWith<$Res> {
   factory _$RootStateCopyWith(
           _RootState value, $Res Function(_RootState) then) =
       __$RootStateCopyWithImpl<$Res>;
-  @override
-  $Res call({String displayName});
 }
 
 /// @nodoc
@@ -82,60 +59,28 @@ class __$RootStateCopyWithImpl<$Res> extends _$RootStateCopyWithImpl<$Res>
 
   @override
   _RootState get _value => super._value as _RootState;
-
-  @override
-  $Res call({
-    Object? displayName = freezed,
-  }) {
-    return _then(_RootState(
-      displayName: displayName == freezed
-          ? _value.displayName
-          : displayName // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$_RootState implements _RootState {
-  _$_RootState({this.displayName = ""});
-
-  @JsonKey()
-  @override
-  final String displayName;
+  _$_RootState();
 
   @override
   String toString() {
-    return 'RootState(displayName: $displayName)';
+    return 'RootState()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _RootState &&
-            const DeepCollectionEquality()
-                .equals(other.displayName, displayName));
+        (other.runtimeType == runtimeType && other is _RootState);
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(displayName));
-
-  @JsonKey(ignore: true)
-  @override
-  _$RootStateCopyWith<_RootState> get copyWith =>
-      __$RootStateCopyWithImpl<_RootState>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 }
 
 abstract class _RootState implements RootState {
-  factory _RootState({String displayName}) = _$_RootState;
-
-  @override
-  String get displayName;
-  @override
-  @JsonKey(ignore: true)
-  _$RootStateCopyWith<_RootState> get copyWith =>
-      throw _privateConstructorUsedError;
+  factory _RootState() = _$_RootState;
 }

@@ -4,7 +4,5 @@ part 'state.freezed.dart';
 
 @freezed
 class RootState with _$RootState {
-  factory RootState({
-    @Default("") String displayName,
-  }) = _RootState;
+  factory RootState() = _RootState;
 }
