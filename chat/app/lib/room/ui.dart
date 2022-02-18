@@ -1,3 +1,4 @@
+import 'package:chat_app/components/app_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -8,8 +9,9 @@ class RoomWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("ルーム一覧"),
+        title: const Text(""),
       ),
+      body: _Body(),
     );
   }
 }
@@ -17,7 +19,6 @@ class RoomWidget extends ConsumerWidget {
 class _Body extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // TODO: implement build
-    throw UnimplementedError();
+throw UnimplementedError();
   }
 }

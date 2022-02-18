@@ -1,7 +1,9 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'event.freezed.dart';
+part 'event.g.dart';
 
+@JsonSerializable()
 @freezed
 class CreateRoomEventSendData with _$CreateRoomEventSendData {
   factory CreateRoomEventSendData({
@@ -11,4 +13,6 @@ class CreateRoomEventSendData with _$CreateRoomEventSendData {
   }) = _CreateRoomEventSendData;
 
   static String get eventName => 'create_room';
+
+  Map<String, dynamic> toJson() => _$CreateRoomEventSendDataToJson(this);
 }

@@ -41,6 +41,8 @@ dependencies:
   json_serializable: ^6.1.4
   json_annotation: ^4.4.0
   shared_preferences: ^2.0.0-nullsafety
+  gap: ^2.0.0
+  uuid: ^3.0.5
 
 dev_dependencies:
   flutter_test:
