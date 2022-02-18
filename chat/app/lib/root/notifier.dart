@@ -8,3 +8,9 @@ class RootNotifier extends StateNotifier<RootState> {
     state = state.copyWith(displayName: name);
   }
 }
+
+final rootNotifierProvider = StateNotifierProvider<RootNotifier, RootState>(
+  (final StateNotifierProviderRef ref) => RootNotifier(
+    RootState(),
+  ),
+);
