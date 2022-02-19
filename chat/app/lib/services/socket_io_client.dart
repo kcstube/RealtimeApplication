@@ -8,6 +8,12 @@ class SocketIOClientService {
       if (kDebugMode) {
         print(socket);
       }
+
+      _socket.onError((err) {
+        if (kDebugMode) {
+          print(err);
+        }
+      });
     });
   }
 

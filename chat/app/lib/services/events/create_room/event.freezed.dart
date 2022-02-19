@@ -14,6 +14,11 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+CreateRoomEventSendData _$CreateRoomEventSendDataFromJson(
+    Map<String, dynamic> json) {
+  return _CreateRoomEventSendData.fromJson(json);
+}
+
 /// @nodoc
 class _$CreateRoomEventSendDataTearOff {
   const _$CreateRoomEventSendDataTearOff();
@@ -28,6 +33,10 @@ class _$CreateRoomEventSendDataTearOff {
       ownerDisplayName: ownerDisplayName,
     );
   }
+
+  CreateRoomEventSendData fromJson(Map<String, Object?> json) {
+    return CreateRoomEventSendData.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -39,6 +48,7 @@ mixin _$CreateRoomEventSendData {
   String get roomName => throw _privateConstructorUsedError;
   String get ownerDisplayName => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $CreateRoomEventSendDataCopyWith<CreateRoomEventSendData> get copyWith =>
       throw _privateConstructorUsedError;
@@ -130,12 +140,15 @@ class __$CreateRoomEventSendDataCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_CreateRoomEventSendData implements _CreateRoomEventSendData {
   _$_CreateRoomEventSendData(
       {required this.roomId,
       required this.roomName,
       required this.ownerDisplayName});
+
+  factory _$_CreateRoomEventSendData.fromJson(Map<String, dynamic> json) =>
+      _$$_CreateRoomEventSendDataFromJson(json);
 
   @override
   final String roomId;
@@ -172,6 +185,11 @@ class _$_CreateRoomEventSendData implements _CreateRoomEventSendData {
   _$CreateRoomEventSendDataCopyWith<_CreateRoomEventSendData> get copyWith =>
       __$CreateRoomEventSendDataCopyWithImpl<_CreateRoomEventSendData>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_CreateRoomEventSendDataToJson(this);
+  }
 }
 
 abstract class _CreateRoomEventSendData implements CreateRoomEventSendData {
@@ -179,6 +197,9 @@ abstract class _CreateRoomEventSendData implements CreateRoomEventSendData {
       {required String roomId,
       required String roomName,
       required String ownerDisplayName}) = _$_CreateRoomEventSendData;
+
+  factory _CreateRoomEventSendData.fromJson(Map<String, dynamic> json) =
+      _$_CreateRoomEventSendData.fromJson;
 
   @override
   String get roomId;

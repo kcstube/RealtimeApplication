@@ -14,6 +14,11 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+JoinRoomEventSendData _$JoinRoomEventSendDataFromJson(
+    Map<String, dynamic> json) {
+  return _JoinRoomEventSendData.fromJson(json);
+}
+
 /// @nodoc
 class _$JoinRoomEventSendDataTearOff {
   const _$JoinRoomEventSendDataTearOff();
@@ -25,6 +30,10 @@ class _$JoinRoomEventSendDataTearOff {
       roomId: roomId,
     );
   }
+
+  JoinRoomEventSendData fromJson(Map<String, Object?> json) {
+    return JoinRoomEventSendData.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -35,6 +44,7 @@ mixin _$JoinRoomEventSendData {
   String get userDisplayName => throw _privateConstructorUsedError;
   String get roomId => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $JoinRoomEventSendDataCopyWith<JoinRoomEventSendData> get copyWith =>
       throw _privateConstructorUsedError;
@@ -115,10 +125,13 @@ class __$JoinRoomEventSendDataCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_JoinRoomEventSendData implements _JoinRoomEventSendData {
   _$_JoinRoomEventSendData(
       {required this.userDisplayName, required this.roomId});
+
+  factory _$_JoinRoomEventSendData.fromJson(Map<String, dynamic> json) =>
+      _$$_JoinRoomEventSendDataFromJson(json);
 
   @override
   final String userDisplayName;
@@ -151,12 +164,20 @@ class _$_JoinRoomEventSendData implements _JoinRoomEventSendData {
   _$JoinRoomEventSendDataCopyWith<_JoinRoomEventSendData> get copyWith =>
       __$JoinRoomEventSendDataCopyWithImpl<_JoinRoomEventSendData>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_JoinRoomEventSendDataToJson(this);
+  }
 }
 
 abstract class _JoinRoomEventSendData implements JoinRoomEventSendData {
   factory _JoinRoomEventSendData(
       {required String userDisplayName,
       required String roomId}) = _$_JoinRoomEventSendData;
+
+  factory _JoinRoomEventSendData.fromJson(Map<String, dynamic> json) =
+      _$_JoinRoomEventSendData.fromJson;
 
   @override
   String get userDisplayName;

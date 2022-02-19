@@ -25,15 +25,15 @@ class AppCard extends StatelessWidget {
         elevation: 4,
         child: Column(
           children: [
-            image == null ? const SizedBox.shrink() : image!,
-            const Gap(16),
+            image == null ? const SizedBox() : image!,
+            image == null ? const SizedBox() : const Gap(16),
             Text(
               title,
               style: Theme.of(context).textTheme.headline3,
             ),
-            const Gap(16),
+            subTitle == null ? const SizedBox() : const Gap(16),
             subTitle == null
-                ? const SizedBox.shrink()
+                ? const SizedBox()
                 : Text(
                     subTitle!,
                     style: Theme.of(context).textTheme.bodyMedium,

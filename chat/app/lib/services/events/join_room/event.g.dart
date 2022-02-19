@@ -6,15 +6,15 @@ part of 'event.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-JoinRoomEventSendData _$JoinRoomEventSendDataFromJson(
+_$_JoinRoomEventSendData _$$_JoinRoomEventSendDataFromJson(
         Map<String, dynamic> json) =>
-    JoinRoomEventSendData(
+    _$_JoinRoomEventSendData(
       userDisplayName: json['userDisplayName'] as String,
       roomId: json['roomId'] as String,
     );
 
-Map<String, dynamic> _$JoinRoomEventSendDataToJson(
-        JoinRoomEventSendData instance) =>
+Map<String, dynamic> _$$_JoinRoomEventSendDataToJson(
+        _$_JoinRoomEventSendData instance) =>
     <String, dynamic>{
       'userDisplayName': instance.userDisplayName,
       'roomId': instance.roomId,

@@ -1,6 +1,6 @@
 import 'package:chat_app/input_display_name/notifier.dart';
 import 'package:chat_app/input_display_name/ui.dart';
-import 'package:chat_app/room/ui.dart';
+import 'package:chat_app/room_list/ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:flutter/material.dart';
@@ -19,7 +19,7 @@ class RootWidget extends ConsumerWidget {
     if (!gotoOnboarding) {
       return const InputDisplayNameWidget();
     } else {
-      return const RoomWidget();
+      return const RoomListWidget();
     }
   }
 }
