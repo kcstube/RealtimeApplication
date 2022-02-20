@@ -32,8 +32,9 @@ class ContentState: ObservableObject {
     }
 
     // スライダーの変更をサーバーに送信するときに呼ぶメソッド
-    func sendValue() {
-        socket.emit("slider", slider)
+    func send(value: Double) {
+        slider = value
+        socket.emit("slider", value)
     }
 
     // ボタンをタップしたときに呼ぶメソッド

@@ -1,0 +1,42 @@
+@startuml
+actor iOSアプリA #blue
+actor iOSアプリB #orange
+actor iOSアプリC #pink
+actor サーバー #green
+note over of iOSアプリA: 接続を開始する
+iOSアプリA ->> サーバー: Socket.IOのコネクション確立
+サーバー --> iOSアプリA: Socket.IOのコネクション確立が完了したことを通知
+
+note over of iOSアプリA: スライダーを0.6に変更
+
+iOSアプリA ->> サーバー: "slider"イベントを[0.6]を添えて送信
+note over of サーバー: ブロードキャスト\nする先がない\nので何もしない
+
+note over of iOSアプリB: スライダーを0.1に変更
+
+note over of iOSアプリB: Socket.IOと接続されていないので\nスライダーは同期されない
+
+note over of iOSアプリB: 接続を開始する
+iOSアプリB ->> サーバー: Socket.IOのコネクション確立
+サーバー --> iOSアプリB: Socket.IOのコネクション確立が完了したことを通知
+
+note over of iOSアプリB: スライダーを0.3に変更
+
+iOSアプリB ->> サーバー: "slider"イベントを[0.3]を添えて送信
+alt 同期処理
+サーバー -->> iOSアプリA: ブロードキャスト先（iOSアプリA）に"slider"イベントを[0.3]を添えて送信する
+end
+
+note over of iOSアプリC: 接続を開始する
+iOSアプリC ->> サーバー: Socket.IOのコネクション確立
+サーバー --> iOSアプリC: Socket.IOのコネクション確立が完了したことを通知
+
+note over of iOSアプリC: スライダーを1に変更
+
+iOSアプリB ->> サーバー: "slider"イベントを[1]を添えて送信
+alt 同期処理
+サーバー -->> iOSアプリA: ブロードキャスト先（iOSアプリA）に"slider"イベントを[1]を添えて送信する
+サーバー -->> iOSアプリB: ブロードキャスト先（iOSアプリB）に"slider"イベントを[1]を添えて送信する
+end
+
+@enduml
